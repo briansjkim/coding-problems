@@ -21,10 +21,10 @@ console.log(obj.firstName); // 'Brian'
   // this means checking to see if a given piece of info is a value somewhere
 for (var key in obj) {
   if (obj[key] === true) {
-    console.log(key);
+    return key;
   }
-  console.log(false);
 }
+// this won't return anything
 
 // Object.keys() is O(n) / Linear time
 // has to go through the whole obj and put each key into an array and then return it
