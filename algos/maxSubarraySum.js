@@ -25,4 +25,4 @@ var maxSubarraySum = (array, num) => {
   return maxSum;
 }
 
-
+// sliding window pattern
