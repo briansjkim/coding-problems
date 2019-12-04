@@ -4,6 +4,16 @@
 
 // divide and conquer solution
 
+// initial solution
 var search = (array, num) => {
-
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] === num) {
+      return i;
+    }
+  }
+  return -1;
 }
+
+
+
+console.log(search([1,2,3,4,5], 5));
