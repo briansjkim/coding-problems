@@ -1,11 +1,3 @@
-// create a function that takes in an list
-// iterate through the list starting at the beginning
-  // iterate through the list again starting at 1 + the first iteration's index
-  // if the first iteration's el is larger than the second iteration's el
-    // swap the two elements
-  // repeat until the list is sorted
-// return the now sorted array
-
 var swap = (array, idx1, idx2) => {
   let temp = array[idx1];
   array[idx1] = array[idx2];
