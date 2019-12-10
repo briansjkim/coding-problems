@@ -24,6 +24,17 @@ var merge = (arr1, arr2) => {
   return result;
 }
 
+var mergeSort = (arr) => {
+  if (arr.length <= 1) return arr;
+  var mid = Math.floor(arr.length / 2);
+  // breaks down the left side of the array until there's 0 or 1 elements left
+  var left = mergeSort(arr.slice(0, mid));
+  // breaks down the right side of the array until there's 0 or 1 elements left
+  var right = mergeSort(arr.slice(mid));
+  // uses the merge function to merge each array together (starting from when there was only 0 or 1 elements)
+  // and then returns the completely sorted and merged array
+  return merge(left, right);
+}
 
-// console.log(merge([1, 10, 15], [6, 7, 9]));
-// console.log(merge([], [1, 3]));
+// console.log(mergeSort([10, 76, 24, 73]));
+// console.log(mergeSort([50, 3, 2, 16, 11, 93]));
