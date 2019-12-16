@@ -60,6 +60,20 @@ class SinglyLinkedList {
     }
     return oldHead;
   }
+
+  unshift(val) {
+    var newNode = new Node(val);
+    if(!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      var oldHead = this.head;
+      this.head = newNode;
+      newNode.next = oldHead;
+    }
+    this.length++;
+    return this;
+  }
 }
 
 // var test = new SinglyLinkedList;
