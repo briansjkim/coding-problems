@@ -91,4 +91,15 @@ class SinglyLinkedList {
     }
     return current;
   }
+
+  set(idx, val) {
+    var foundNode = this.get(idx);
+    if (!foundNode) {
+      return null;
+    } else {
+      var oldVal = foundNode.val;
+      foundNode.val = val;
+      return oldVal;
+    }
+  }
 }
