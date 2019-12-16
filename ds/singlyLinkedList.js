@@ -74,11 +74,21 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
-}
 
-// var test = new SinglyLinkedList;
-// test.push(5);
-// test.push(6);
-// test.push(7);
-// test.pop();
-// console.log(test);
+  get(idx) {
+    if (idx < 0 || idx >= this.length) {
+      return null;
+    }
+    if (!this.head) {
+      return undefined;
+    }
+
+    var counter = 0;
+    var current = this.head;
+    while (counter !== idx) {
+      current = current.next;
+      counter++;
+    }
+    return current;
+  }
+}
