@@ -109,18 +109,20 @@ class SinglyLinkedList {
       // then just push it
       return null;
     }
+    // with the bottom two conditions, if we don't return it
+    // the insert function continues and adds another node and increments the length again
     if (idx === 0) {
-      this.unshift(val);
+      return this.unshift(val);
     }
     if (idx === this.length) {
-      this.push(val);
+      return this.push(val);
     }
 
     // pass in idx - 1 to get the node at the position before
       // because we want to use this node to create a pointer to the new node
     var preNode = this.get(idx - 1);
     var newNode = new Node(val);
-    var currentNode = this.get(idx);
+    var currentNode = prevNode.next;
 
     preNode.next = newNode;
     newNode.next = currentNode;
