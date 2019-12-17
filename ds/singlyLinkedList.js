@@ -156,7 +156,10 @@ class SinglyLinkedList {
     var prevNode = null;
     var current = this.head;
     var following = current;
-    // not sure I understand why this is here
+
+    // these two lines of code are used if there is a head and tail in a linked list
+    // because there are some linked lists that DON'T have a head/tail
+    // it depends on how the list is defined
     this.head = this.tail;
     this.tail = current;
 
