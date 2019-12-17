@@ -74,4 +74,31 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+
+  get(idx) {
+    if (idx < 0 || idx >= this.length) {
+      return null;
+    }
+    let counter;
+    let current;
+     // can go from beginning to the end or end to beginning
+        // which direction you go depends on the number of the idx
+    if (idx > Math.floor(this.length / 2)) {
+      current = this.tail;
+      counter = this.length - 1;
+      while (counter !== idx) {
+        current = current.prev;
+        counter--;
+      }
+      return current;
+    } else {
+      current = this.head;
+      counter = 0;
+      while(counter !== idx) {
+        current = current.next;
+        counter++;
+      }
+      return current;
+    }
+  }
 }
