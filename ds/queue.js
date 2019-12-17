@@ -24,5 +24,21 @@ class Queue {
     this.size++;
     return this;
   }
+
+  dequeue() {
+    if (this.length === 0) {
+      return null;
+    }
+    var dequeuedNode = this.first;
+    if (this.length === 1) {
+      this.first = null;
+      this.last = null;
+    } else {
+      this.first = this.first.next;
+      dequeuedNode.next = null;
+    }
+    this.size--;
+    return dequeuedNode;
+  }
 }
 
