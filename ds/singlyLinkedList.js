@@ -148,4 +148,24 @@ class SinglyLinkedList {
     this.length--;
     return currentNode;
   }
+
+  reverse() {
+    if (this.length === 0) {
+      return null;
+    }
+    var prevNode = null;
+    var current = this.head;
+    var following = current;
+    // not sure I understand why this is here
+    this.head = this.tail;
+    this.tail = current;
+
+    while (current !== null) {
+      following = following.next;
+      current.next = prevNode;
+      prevNode = current;
+      current = following;
+    }
+    return this;
+  }
 }
