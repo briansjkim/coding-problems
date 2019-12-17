@@ -102,4 +102,29 @@ class SinglyLinkedList {
       return oldVal;
     }
   }
+
+  insert(idx, val) {
+    if (idx < 0 || idx > this.length) {
+      // if idx is the same as the length
+      // then just push it
+      return null;
+    }
+    if (idx === 0) {
+      this.unshift(val);
+    }
+    if (idx === this.length) {
+      this.push(val);
+    }
+
+    // pass in idx - 1 to get the node at the position before
+      // because we want to use this node to create a pointer to the new node
+    var preNode = this.get(idx - 1);
+    var newNode = new Node(val);
+    var currentNode = this.get(idx);
+
+    preNode.next = newNode;
+    newNode.next = currentNode;
+    this.length++;
+    return this;
+  }
 }
