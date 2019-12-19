@@ -80,6 +80,15 @@ class BinarySearchTree {
   }
 
   DFSPostOrder() {
+    // basically just DFSPreOrder, but rearranging a step
+    var results = [];
 
+    function traverse(node) {
+      if (node.left) { traverse(node.left) };
+      if (node.right) { traverse(node.right) };
+      results.push(node);
+    }
+    traverse(this.root);
+    return results;
   }
 }
