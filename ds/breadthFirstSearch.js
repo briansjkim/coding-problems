@@ -1,3 +1,6 @@
+// starts at the root node
+// traverses the tree FROM LEFT TO RIGHT
+
 class Node {
   constructor(val) {
     this.val = val;
