@@ -72,6 +72,17 @@ class BinarySearchTree {
   }
 
   BFS() {
+    var result = [];
+    var queue = [];
+    var node = this.root;
+    queue.push(node);
 
+    while (queue.length) {
+      node = queue.shift();
+      result.push(node);
+      if (node.left) { queue.push(node.left) };
+      if (node.right) { queue.push(node.right) };
+    }
+    return result;
   }
 }
