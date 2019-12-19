@@ -6,7 +6,6 @@ class MaxBinaryHeap {
   swap(val) {
     var idx = this.values.length - 1;
 
-    // stop before idx gets to 0 because the parentIdx is going to be -1
     while (idx > 0) {
       let node = this.values[idx];
       let parentIdx = Math.floor( (idx - 1) / 2);
