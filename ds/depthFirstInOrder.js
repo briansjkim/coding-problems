@@ -70,4 +70,17 @@ class BinarySearchTree {
       }
     }
   }
+
+  DFSInOrder() {
+    // basically just DFSPreOrder & DFSPostOrder, but rearranging a step
+    var results = [];
+
+    function traverse(node) {
+      if (node.left) { traverse(node.left) };
+      results.push(node);
+      if (node.right) { traverse(node.right) };
+    }
+    traverse(this.root);
+    return results;
+  }
 }
