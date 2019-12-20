@@ -32,7 +32,12 @@ class Graph {
   }
 
   removeVertex(vertex) {
-
+    while (this.adjacencyList[vertex].length) {
+      var adjacentVertex = this.adjacencyList[vertex].pop();
+      this.removeEdge(adjacentVertex, vertex);
+    }
+    delete this.adjacentList[vertex];
+    return this;
   }
 }
 
