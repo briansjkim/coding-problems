@@ -30,5 +30,9 @@ class Graph {
     }
     return this;
   }
+
+  removeVertex(vertex) {
+
+  }
 }
 
