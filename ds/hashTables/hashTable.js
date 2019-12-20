@@ -48,6 +48,13 @@ class HashTable {
   set(key, val) {
     // hash the key
     // store the key-value pair in the hash table array via separate chaining
+    var idx = this._hash(key);
+    // if the idx is empty, create a new array to store the key-value pair
+    if (!this.keyMap[idx]) {
+      this.keyMap[idx] = [];
+    }
+    // regardless of whether the idx is empty or not, push the key-value pair in a tuple
+    this.keyMap[idx].push([key, value]);
   }
 
   get(key) {
