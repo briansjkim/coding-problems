@@ -55,6 +55,7 @@ class HashTable {
     }
     // regardless of whether the idx is empty or not, push the key-value pair in a tuple
     this.keyMap[idx].push([key, value]);
+    return this;
   }
 
   get(key) {
@@ -62,5 +63,16 @@ class HashTable {
     // retrieve the key-value pair in the hash table
       // must check if it matches
     // if key isn't found, return undefined
+    var idx = this._hash(key);
+    if (this.keyMap[idx]) {
+      for (let i = 0; i < this.keyMap[idx].length; i++) {
+        // keyMap[idx][i] gets all of the key-value pairs at the specific index
+        if (this.keyMap[idx][i][0] === key) {
+          // we just want the value to be returned
+          return this.keyMap[idx][i][1];
+        }
+      }
+    }
+    return undefined;
   }
 }
