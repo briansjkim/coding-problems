@@ -40,8 +40,25 @@ class Graph {
     return this;
   }
 
-  depthFirst() {
+  depthFirstRecursive(vertex) {
+    var result = [];
+    var visited = {};
 
+    // 'this' loses its meaning in an IIFE, so define 'this' to a variable to use inside the IIFE
+    var adjacencyList = this.adjacencyList;
+    (function traverse(vertex) {
+      if (!vertex) { return null; }
+      visited[vertex] = true;
+      result.push(vertex);
+
+      adjacencyList[vertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          traverse(neighbor);
+        }
+      })
+    })(vertex);
+
+    return result;
   }
 }
 
