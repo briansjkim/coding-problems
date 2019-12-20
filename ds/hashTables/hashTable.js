@@ -53,6 +53,8 @@ class HashTable {
     if (!this.keyMap[idx]) {
       this.keyMap[idx] = [];
     }
+    // could alert user if there are duplicate keys
+
     // regardless of whether the idx is empty or not, push the key-value pair in a tuple
     this.keyMap[idx].push([key, value]);
     return this;
@@ -77,7 +79,17 @@ class HashTable {
   }
 
   keys() {
-
+    let keysArr = [];
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          if (!keysArr.includes(this.keyMap[i][j][0])) {
+            keysArr.push(this.keyMap[i][j][0]);
+          }
+        }
+      }
+    }
+    return keysArr;
   }
 
   values() {
