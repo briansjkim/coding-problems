@@ -78,6 +78,21 @@ class HashTable {
     return undefined;
   }
 
+  remove(key) {
+    var idx = this._hash(key);
+    if (this.keyMap[idx]) {
+      for (var i = 0; i < this.keyMap[idx].length; i++) {
+        if (this.keyMap[idx][i][0] === key) {
+          // if you do splice(i, 1), you only remove one tuple
+            // this won't work if you have multiple key-value pairs with the same key (shouldn't happen in the first place, but just in case)
+          // if there is only one key-value pair with one key, just use .splice(i, 1)
+          this.keyMap[idx].splice(i, this.keyMap[idx][i].length);
+        }
+      }
+    }
+    return undefined;
+  }
+
   keys() {
     let keysArr = [];
     for (let i = 0; i < this.keyMap.length; i++) {
