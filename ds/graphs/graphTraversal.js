@@ -39,5 +39,9 @@ class Graph {
     delete this.adjacentList[vertex];
     return this;
   }
+
+  depthFirst() {
+
+  }
 }
 
