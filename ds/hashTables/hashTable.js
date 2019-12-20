@@ -44,4 +44,16 @@ class HashTable {
     }
     return total;
   }
+
+  set(key, val) {
+    // hash the key
+    // store the key-value pair in the hash table array via separate chaining
+  }
+
+  get(key) {
+    // hashes the key
+    // retrieve the key-value pair in the hash table
+      // must check if it matches
+    // if key isn't found, return undefined
+  }
 }
