@@ -75,4 +75,25 @@ class HashTable {
     }
     return undefined;
   }
+
+  keys() {
+
+  }
+
+  values() {
+    let valuesArr = [];
+    for (let i = 0; i < this.keyMap.length; i++) {
+      // this.keyMap[i] gets us all of the key-value pairs
+      if (this.keyMap[i]) {
+        // this.keyMap[i][j] gets us each subarray
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          // handling duplicate values so that we only return unique values
+          if (!valuesArr.includes(this.keyMap[i][j][1])) {
+            valuesArr.push(this.keyMap[i][j][1]);
+          }
+        }
+      }
+    }
+    return valuesArr;
+  }
 }
