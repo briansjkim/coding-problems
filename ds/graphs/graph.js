@@ -10,5 +10,9 @@ class Graph {
       this.adjacencyList[vertex] = [];
     }
   }
+
+  addEdge() {
+
+  }
 }
 
