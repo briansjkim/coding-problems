@@ -60,5 +60,9 @@ class Graph {
 
     return result;
   }
+
+  depthFirstIterative(vertex) {
+
+  }
 }
 
