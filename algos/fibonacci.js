@@ -31,7 +31,7 @@ var fibonacciRecursive = (n) => {
 // console.log(fibonacciRecursive(4)); // 3
 // console.log(fibonacciRecursive(5)); // 5
 
-// with dynamic programming, we can reduce the time complexity
+// with dynamic programming, we can reduce the time complexity to about O(N)
 // using memoization
 var fib = (n, memo = []) => {
   // if the result is stored in the array,
