@@ -16,7 +16,7 @@ var fibonacciIterative = (n) => {
 // console.log(fibonacciIterative(4)); // 3
 // console.log(fibonacciIterative(5)); // 5
 
-
+// time complexity is EXPONENTIAL
 var fibonacciRecursive = (n) => {
   if (n <= 2) {
     return 1;
@@ -31,3 +31,21 @@ var fibonacciRecursive = (n) => {
 // console.log(fibonacciRecursive(4)); // 3
 // console.log(fibonacciRecursive(5)); // 5
 
+// with dynamic programming, we can reduce the time complexity
+// using memoization
+var fib = (n, memo = []) => {
+  // if the result is stored in the array,
+    // just return it rather than re-solving it
+  if (memo[n] !== undefined) {
+    return memo[n];
+  }
+  // same base case as usual
+  if (n <= 2) {
+    return 1;
+  }
+  // store the result of the fib operation for a number
+  var result = fib(n - 2, memo) + fib(n - 1, memo);
+  memo[n] = result;
+  // return the result
+  return result;
+}
