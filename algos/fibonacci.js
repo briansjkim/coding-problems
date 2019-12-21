@@ -18,8 +18,8 @@ var fibonacciIterative = (n) => {
 
 
 var fibonacciRecursive = (n) => {
-  if (n < 2) {
-    return n;
+  if (n <= 2) {
+    return 1;
   }
 
   return fibonacciRecursive(n - 2) + fibonacciRecursive(n - 1);
