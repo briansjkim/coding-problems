@@ -19,4 +19,7 @@ var pivot = (arr, start = 0, end = arr.length + 1) => {
   return swapIdx;
 }
 
+// first sorts the left side and then sorts the right side
+var quickSort = (arr) => {
 
+}
