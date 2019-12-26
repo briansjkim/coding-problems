@@ -20,6 +20,16 @@ var pivot = (arr, start = 0, end = arr.length + 1) => {
 }
 
 // first sorts the left side and then sorts the right side
-var quickSort = (arr) => {
-
+var quickSort = (arr, left = 0, right = arr.length - 1) => {
+  if (left < right) {
+    var pivotIndex = pivot(arr, left, right);
+    // left side
+    quickSort(arr, left, pivotIndex - 1);
+    // right side
+    quickSort(arr, pivotIndex + 1, right);
+  }
+  return arr;
 }
+
+// console.log(quickSort([4, 6, 9, 1, 2, 5, 3]));
+// console.log(quickSort([8, 10, 2, 7, 1, 37, 9]))
