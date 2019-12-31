@@ -15,6 +15,7 @@ const swap = (arr, idx1, idx2) => {
 }
 
 // works in all cases (not sorted, somewhat sorted, sorted)
+// time complexity is quadratic
 const bubbleSort = (arr) => {
   for (var i = arr.length - 1; i >= 0; i--) {
     for (var j = 0; j < i; j++) {
@@ -28,6 +29,7 @@ const bubbleSort = (arr) => {
 
 // depends on how the elements are already sorted
 // doesn't work if the first element is the smallest of all the elements
+// best case time complexity is linear
 const optimizedSort = (arr) => {
   for (var i = arr.length - 1; i >= 0; i--) {
     var swapped = false;
