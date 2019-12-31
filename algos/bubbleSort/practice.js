@@ -14,16 +14,43 @@ const swap = (arr, idx1, idx2) => {
   arr[idx2] = temp;
 }
 
+// works in all cases (not sorted, somewhat sorted, sorted)
 const bubbleSort = (arr) => {
-  for (var i = 0; i < arr.length; i++) {
-    for (var j = i + 1; j < arr.length; j++) {
-      if (arr[i] > arr[j]) {
-        swap(arr, i, j)
+  for (var i = arr.length - 1; i >= 0; i--) {
+    for (var j = 0; j < i; j++) {
+      if (arr[j] > arr[i]) {
+        swap(arr, j, i);
       }
     }
   }
   return arr;
 }
 
+// depends on how the elements are already sorted
+// doesn't work if the first element is the smallest of all the elements
+const optimizedSort = (arr) => {
+  for (var i = arr.length - 1; i >= 0; i--) {
+    var swapped = false;
+    for (var j = 0; j < i; j++) {
+      if (arr[j] > arr[i]) {
+        swap(arr, j, i);
+        swapped = true;
+      }
+    }
+    if (!swapped) { break; }
+  }
+  return arr;
+}
+
 
 // console.log(bubbleSort([3, 38, 5, 44, 47, 15, 36]));
+// console.log(optimizedSort([3, 38, 5, 44, 47, 15, 36])); // doesn't work the way it should
+
+// console.log(bubbleSort([37, 45, 29, 8]));
+// console.log(optimizedSort([37, 45, 29, 8]));
+
+// console.log(bubbleSort([1, 2, 3, 4, 5, 6]));
+// console.log(optimizedSort([1, 2, 3, 4, 5, 6]));
+
+// console.log(optimizedSort([8, 1, 2, 3, 4, 5, 6]));
+// console.log(bubbleSort([8, 1, 2, 3, 4, 5, 6]));
