@@ -10,18 +10,30 @@ class PriorityQueue {
     this.values = [];
   }
 
-  // enqueue
-  // accepts a value and a priority
-  // makes a new node
-  // places it in the right spot based on priority
   enqueue(val, priority) {
-    var newNode = new Node(val, priority);
+    let newNode = new Node(val, priority);
+    // adds new nodes to the end
     this.values.push(newNode);
     this.bubbleUp();
   }
 
   bubbleUp() {
+    // idx will change every time there is a swap
+    let idx = this.values.length - 1;
+    var element = this.values[idx];
+    // create a while loop so that the newly inserted node can continue to move until it reaches the correct position
+    while (idx > 0) {
+      // place parentIdx inside the loop because it'll keep changing if there is a swap AND if idx is greater than 0
+      let parentIdx = Math.floor((idx - 1) / 2);
+      let parent = this.values[parentIdx];
 
+      // check for priority
+      if (element.priority <= parent.priority) { break; }
+
+      this.values[parentIdx] = element;
+      this.values[idx] = parent;
+      idx = parentIdx;
+    }
   }
 
 
