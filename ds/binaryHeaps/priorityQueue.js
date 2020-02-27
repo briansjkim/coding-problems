@@ -14,6 +14,10 @@ class PriorityQueue {
   // accepts a value and a priority
   // makes a new node
   // places it in the right spot based on priority
+  enqueue(val, priority) {
+    var newNode = new Node(val, priority);
+    this.values.push(newNode);
+  }
 
 
   // dequeue
