@@ -37,8 +37,14 @@ class PriorityQueue {
     }
   }
 
-  // dequeue
-  // removes root element
-  // returns it
-  // rearranges the heap using priority
+  dequeue() {
+    const min = this.values[0];
+    const end = this.values[this.values.length - 1];
+    if (this.values.length > 0) {
+      this.values[0] = end;
+      this.sinkDown();
+    }
+    return min;
+  }
+
 }
