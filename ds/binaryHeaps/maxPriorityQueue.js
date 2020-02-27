@@ -33,4 +33,51 @@ class PriorityQueue {
       idx = parentIdx;
     }
   }
+
+  dequeue() {
+    const max = this.values[0];
+    const end = this.values.pop();
+    // if the length of values is greater than 0, assign 'end' to the root node and run sinkDown
+    // we don't want to move 'end' to the root and run sinkDown because the end will constantly become the root
+    if (this.values.length > 0) {
+      this.values[0] = end;
+      this.sinkDown();
+    }
+    return max;
+  }
+
+  sinkDown() {
+    let idx = 0;
+    const element = this.values[0];
+
+    while (idx < this.values.length - 1) {
+      let leftChildIdx = 2 * idx + 1;
+      let rightChildIdx = 2 * idx + 2;
+      let leftChild;
+      let rightChild;
+      // swap will keep track of the index of that will contain the element that will be swapped with the root
+      let swap = null;
+
+      if (leftChildIdx < length) {
+        leftChild = this.values[leftChildIdx];
+        if (leftChild.priority > element.priority) {
+          swap = leftChildIdx;
+        }
+      }
+
+      if (rightChildIdx < length) {
+        rightChild = this.values[rightChildIdx];
+        // if swap is null and the rightChild's priority is greater than element's priority, swap
+        // OR if swap isn't null (which means the leftChild's priority is greater than the element's priority) and rightChild's priority is greater than the leftChild's priority, swap
+        if ((rightChild.priority > element.priority && swap === null) || (swap !== null && rightChild.priority > leftChild.priority)) {
+          swap = rightChildIdx;
+        }
+      }
+      if (swap === null) { break; }
+
+      this.values[idx] = this.values[swap];
+      this.values[swap] = element;
+      idx = swap;
+    }
+  }
 }
