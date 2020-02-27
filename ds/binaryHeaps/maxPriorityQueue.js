@@ -25,6 +25,7 @@ class PriorityQueue {
       let parentIdx = Math.floor((idx - 1) / 2);
       let parentEl = this.values[parentIdx];
 
+      // since this is a priority queue and we're creating the tree so that the higher number in priority is more urgent
       if (element.priority <= parentEl.priority) { break; }
 
       this.values[parentIdx] = element;
