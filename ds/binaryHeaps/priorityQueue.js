@@ -18,16 +18,14 @@ class PriorityQueue {
   }
 
   bubbleUp() {
-    // idx will change every time there is a swap
     let idx = this.values.length - 1;
-    var element = this.values[idx];
-    // create a while loop so that the newly inserted node can continue to move until it reaches the correct position
+    const element = this.values[idx];
+
     while (idx > 0) {
-      // place parentIdx inside the loop because it'll keep changing if there is a swap AND if idx is greater than 0
       let parentIdx = Math.floor((idx - 1) / 2);
       let parent = this.values[parentIdx];
 
-      // check for priority
+      // since this is a priority queue and we're creating the hierarchy so that the lower number in priority is more urgent
       if (element.priority <= parent.priority) { break; }
 
       this.values[parentIdx] = element;
@@ -35,7 +33,6 @@ class PriorityQueue {
       idx = parentIdx;
     }
   }
-
 
   // dequeue
   // removes root element

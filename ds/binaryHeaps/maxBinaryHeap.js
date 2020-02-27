@@ -3,15 +3,20 @@ class MaxBinaryHeap {
     this.values = [];
   }
 
-  swap(val) {
+  bubbleUp(val) {
+    // the new node is at the end so we want the element at the end of the heap (IN THE BEGINNING)
+    // will change if there's a swap
     var idx = this.values.length - 1;
     // node is going to stay the same value
     let node = this.values[idx];
 
+    // create a while loop with the condition that idx is greater than 0
+    // this way, if idx = 0, that means it reached the top of the heap
     while (idx > 0) {
-      let parentIdx = Math.floor( (idx - 1) / 2);
+      let parentIdx = Math.floor((idx - 1) / 2);
       let parent = this.values[parentIdx];
 
+      // since this is a maxBinaryHeap, if the node is less than the parent, the node is in the right position
       if (node <= parent) { break; }
 
       this.values[parentIdx] = node;
@@ -47,7 +52,7 @@ class MaxBinaryHeap {
 
       if (rightChildIdx < len) {
         rightChild = this.values[rightChildIdx];
-        if ( (rightChild > element && swap === null) || (swap !== null && rightChild > leftChild)) {
+        if ((rightChild > element && swap === null) || (swap !== null && rightChild > leftChild)) {
           swap = rightChildIdx;
         }
       }
