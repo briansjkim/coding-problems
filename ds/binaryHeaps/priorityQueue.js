@@ -1,3 +1,6 @@
+// This Priority Queue based on the lower the priority value, the higher the urgency/priority
+// basically, based on minBinaryHeap
+
 function Node(val, priority) {
   // val doesn't quite matter because the priority queue will be constructed using priority
   this.val = val;
@@ -26,7 +29,7 @@ class PriorityQueue {
       let parent = this.values[parentIdx];
 
       // since this is a priority queue and we're creating the hierarchy so that the lower number in priority is more urgent
-      if (element.priority <= parent.priority) { break; }
+      if (element.priority >= parent.priority) { break; }
 
       this.values[parentIdx] = element;
       this.values[idx] = parent;
