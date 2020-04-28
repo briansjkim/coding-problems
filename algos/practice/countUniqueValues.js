@@ -14,3 +14,14 @@
 // o: integer
 // c: linear time complexity
 // e:
+
+// approach:
+// create two variables to act as pointers
+// set the first pointer to 0 and the second pointer to the first pointer + 1
+// while the first pointer is less than the length of the input array
+// if the value at the first pointer and the second pointer are the same
+// remove the value at the second pointer
+// after finishing the iteration
+// return the number of integers left in the array
+
+
