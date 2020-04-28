@@ -15,3 +15,7 @@
 // o: array of 2 integers or undefined
 // c: linear time complexity. constant space complexity?
 // e:
+
+var sumZero = function (ints) {
+
+}
