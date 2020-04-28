@@ -9,3 +9,8 @@
 
 // count each value ONCE
 // if there are duplicates, ignore them
+
+// i: array of integers
+// o: integer
+// c: linear time complexity
+// e:
