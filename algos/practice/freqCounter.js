@@ -22,11 +22,26 @@
 // add each SQUARED value to storage
 // iterate through the second array
 // check if the squared value is in storage
-// if it is
-// delete the value from storage
-// if storage's length is 0, return true
-// if not, return false
+// if it's not, return false
+// if for loop ends, return true
 
 var same = function (arr1, arr2) {
+  let storage = {};
 
+  for (let i = 0; i < arr1.length; i++) {
+    let squared = Math.pow(arr1[i], 2);
+    if (!storage[squared]) {
+      storage[squared] = true;
+    }
+  }
+
+  for (let j = 0; j < arr2.length; j++) {
+    if (!storage[arr2[j]]) {
+      return false;
+    }
+  }
+
+  return true;
 }
+
+// console.log(same([1, 2, 3], [4, 1, 9]));
