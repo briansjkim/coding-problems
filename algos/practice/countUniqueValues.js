@@ -16,12 +16,30 @@
 // e:
 
 // approach:
-// create two variables to act as pointers
-// set the first pointer to 0 and the second pointer to the first pointer + 1
-// while the first pointer is less than the length of the input array
-// if the value at the first pointer and the second pointer are the same
-// remove the value at the second pointer
-// after finishing the iteration
-// return the number of integers left in the array
+// create a storage variable to hold all the unique values
+// iterate through the input array
+// if the value isn't in storage
+// add it
+// if it is
+// ignore it
+// return the number of values in the storage
+
+var countUniqueValues = function (ints) {
+  if (ints.length < 1) { return 0; }
+
+  let uniques = {};
+
+  for (let i = 0; i < ints.length; i++) {
+    if (!uniques[ints[i]]) {
+      uniques[ints[i]] = 1;
+    }
+  }
+
+  return Object.keys(uniques).length;
+}
 
 
+console.log(countUniqueValues([1, 1, 1, 1, 1, 2])); // 2
+console.log(countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13])); //7
+console.log(countUniqueValues([])) // 0
+console.log(countUniqueValues([-2, -1, -1, 0, 1])); //4
