@@ -16,6 +16,19 @@
 // c: linear time complexity. constant space complexity?
 // e:
 
+// approach:
+// create two variables that will serve as pointers
+// set one of the pointers to 0 (to start at the beginning of the array) and the other to the 1st pointer + 1
+// while the first pointer is less the length of the array
+// check if the sum of the value at the first pointer and the value at the second pointer equal 0
+// if they do
+// return an array with both values
+// if they don't
+// move the second pointer to the next value
+// if the second pointer reaches the end of the array
+// move the first pointer to the next value
+// return undefined if there is no sum of zero
+
 var sumZero = function (ints) {
 
 }
