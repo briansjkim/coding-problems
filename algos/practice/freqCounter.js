@@ -16,6 +16,17 @@
 // c: linear
 // e:
 
+// approach:
+// create a storage variable to hold the values of an array (storage)
+// iterate through the first array
+// add each SQUARED value to storage
+// iterate through the second array
+// check if the squared value is in storage
+// if it is
+// delete the value from storage
+// if storage's length is 0, return true
+// if not, return false
+
 var same = function (arr1, arr2) {
 
 }
