@@ -17,18 +17,34 @@
 // e:
 
 // approach:
-// create two variables that will serve as pointers
-// set one of the pointers to 0 (to start at the beginning of the array) and the other to the 1st pointer + 1
-// while the first pointer is less the length of the array
-// check if the sum of the value at the first pointer and the value at the second pointer equal 0
-// if they do
-// return an array with both values
-// if they don't
-// move the second pointer to the next value
-// if the second pointer reaches the end of the array
-// move the first pointer to the next value
-// return undefined if there is no sum of zero
+// create two variables to act as pointers
+// set one pointer to 0 and the other to the input array's length - 1 => do this because the array is sorted
+// while the first pointer is less than the second pointer
+// if the sum of the values at the first pointer and the second pointer is 0
+// return an array of the two values
+// if the sum is greater than 0
+// decrement the second pointer because this means that the value at the second pointer is too large
+// if the sum is less than 0
+// increment the first pointer because this means that the value at the first pointer is too small
 
 var sumZero = function (ints) {
+  let left = 0;
+  let right = ints.length - 1;
 
+  while (left < right) {
+    let sum = ints[left] + ints[right];
+    if (sum === 0) {
+      return [ints[left], ints[right]];
+    } else if (sum > 0) {
+      right--;
+    } else {
+      left++;
+    }
+  }
 }
+
+console.log(sumZero([])); // undefined
+console.log(sumZero([-3, -2, -1, 0, 1, 2, 3])) // [-3, 3]
+console.log(sumZero([-2, 0, 1, 3])) // undefined
+console.log(sumZero([1, 2, 3])) // undefined
+console.log(sumZero([-10, -8, -5, -3, 2, 4, 5, 13, 20])); // [-5, 5]
