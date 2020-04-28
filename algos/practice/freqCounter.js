@@ -11,6 +11,11 @@
 // same([1, 2, 3], [1, 9]) // false
 // same([1, 2, 1], [4, 4, 1]) // false (must be same frequency)
 
+// i: two arrays
+// o: boolean
+// c: linear
+// e:
+
 var same = function (arr1, arr2) {
 
 }
