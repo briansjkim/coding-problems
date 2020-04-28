@@ -9,3 +9,8 @@
 // validAnagram('awesome', 'awesom') // false
 // validAnagram('qwerty', 'qeywrt') // true
 // validAnagram('texttwisttime', 'timetwisttext') // true
+
+// i: two strings
+// o: boolean
+// c: linear time complexity
+// e:
