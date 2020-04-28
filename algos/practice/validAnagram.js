@@ -14,3 +14,7 @@
 // o: boolean
 // c: linear time complexity
 // e:
+
+var validAnagram = function (str1, str2) {
+
+}
