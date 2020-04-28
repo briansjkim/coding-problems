@@ -25,24 +25,61 @@
 // if it's not, return false
 // if for loop ends, return true
 
+// var same = function (arr1, arr2) {
+//   let storage = {};
+
+//   for (let i = 0; i < arr2.length; i++) {
+//     if (!storage[arr2[i]]) {
+//       storage[arr2[i]] = true;
+//     }
+//   }
+
+//   for (let j = 0; j < arr1.length; j++) {
+//     let squared = Math.pow(arr1[j], 2);
+//     if (!storage[squared]) {
+//       return false;
+//     } else {
+//       delete storage[squared]
+//     }
+//   }
+
+//   return true;
+// }
+
+// better solution
 var same = function (arr1, arr2) {
-  let storage = {};
-
-  for (let i = 0; i < arr2.length; i++) {
-    if (!storage[arr2[i]]) {
-      storage[arr2[i]] = true;
-    }
+  if (arr1.length !== arr2.length) {
+    return false;
   }
 
-  for (let j = 0; j < arr1.length; j++) {
-    let squared = Math.pow(arr1[j], 2);
-    if (!storage[squared]) {
-      return false;
+  let freq1 = {};
+  let freq2 = {};
+
+  for (let i = 0; i < arr1.length; i++) {
+    if (freq1[arr1[i]]) {
+      freq1[arr1[i]]++;
     } else {
-      delete storage[squared]
+      freq1[arr1[i]] = 1;
     }
   }
 
+  for (let j = 0; j < arr2.length; j++) {
+    if (freq2[arr2[j]]) {
+      freq2[arr2[j]]++;
+    } else {
+      freq2[arr2[j]] = 1;
+    }
+  }
+
+  for (let key in freq1) {
+    let squared = Math.pow(key, 2);
+    if (!(squared in freq2)) {
+      return false;
+    }
+    if (freq2[squared] !== freq1[key]) {
+      return false;
+    }
+  }
   return true;
 }
 
