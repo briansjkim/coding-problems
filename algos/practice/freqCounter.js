@@ -28,20 +28,24 @@
 var same = function (arr1, arr2) {
   let storage = {};
 
-  for (let i = 0; i < arr1.length; i++) {
-    let squared = Math.pow(arr1[i], 2);
-    if (!storage[squared]) {
-      storage[squared] = true;
+  for (let i = 0; i < arr2.length; i++) {
+    if (!storage[arr2[i]]) {
+      storage[arr2[i]] = true;
     }
   }
 
-  for (let j = 0; j < arr2.length; j++) {
-    if (!storage[arr2[j]]) {
+  for (let j = 0; j < arr1.length; j++) {
+    let squared = Math.pow(arr1[j], 2);
+    if (!storage[squared]) {
       return false;
+    } else {
+      delete storage[squared]
     }
   }
 
   return true;
 }
 
-// console.log(same([1, 2, 3], [4, 1, 9]));
+console.log(same([1, 2, 3], [4, 1, 9]));
+console.log(same([1, 2, 3], [1, 9])) // false
+console.log(same([1, 2, 1], [4, 4, 1])) // false (must be same frequency)
