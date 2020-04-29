@@ -12,5 +12,24 @@
 // maxSubarraySum([], 4) // null
 
 var maxSubarraySum = function (ints, n) {
+  if (ints.length < 1 || n > ints.length) { return null; }
+  let tempSum = 0;
+  let maxSum = Number.MIN_SAFE_INTEGER;
 
+  for (let i = 0; i < ints.length; i++) {
+    tempSum += ints[i];
+
+    if (i >= n - 1) {
+      maxSum = Math.max(maxSum, tempSum);
+      tempSum = tempSum - ints[i - (n - 1)];
+    }
+  }
+
+  return maxSum;
 }
+
+// console.log(maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 2)) // 10
+// console.log(maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 4)) // 17
+// console.log(maxSubarraySum([4, 2, 1, 6], 1)) // 6
+// console.log(maxSubarraySum([4, 2, 1, 6, 2], 4))// 13
+// console.log(maxSubarraySum([], 4)) // null
