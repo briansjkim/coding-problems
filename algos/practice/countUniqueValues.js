@@ -24,20 +24,36 @@
 // ignore it
 // return the number of values in the storage
 
+// single pointer and using data structure
+// var countUniqueValues = function (ints) {
+//   if (ints.length < 1) { return 0; }
+
+//   let uniques = {};
+
+//   for (let i = 0; i < ints.length; i++) {
+//     if (!uniques[ints[i]]) {
+//       uniques[ints[i]] = 1;
+//     }
+//   }
+
+//   return Object.keys(uniques).length;
+// }
+
+// using multiple pointers
 var countUniqueValues = function (ints) {
   if (ints.length < 1) { return 0; }
 
-  let uniques = {};
+  let i = 0;
 
-  for (let i = 0; i < ints.length; i++) {
-    if (!uniques[ints[i]]) {
-      uniques[ints[i]] = 1;
+  for (let j = 1; j < ints.length; j++) {
+    if (ints[i] !== ints[j]) {
+      i++;
+      ints[i] = ints[j];
     }
   }
 
-  return Object.keys(uniques).length;
+  return i + 1;
 }
-
 
 console.log(countUniqueValues([1, 1, 1, 1, 1, 2])); // 2
 console.log(countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13])); //7
