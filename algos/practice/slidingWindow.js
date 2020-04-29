@@ -10,3 +10,7 @@
 // maxSubarraySum([4, 2, 1, 6], 1) // 6
 // maxSubarraySum([4, 2, 1, 6, 2], 4)// 13
 // maxSubarraySum([], 4) // null
+
+var maxSubarraySum = function (ints, n) {
+
+}
