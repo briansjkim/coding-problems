@@ -15,3 +15,6 @@
  * e:
  */
 
+var sameFrequency = function (int1, int2) {
+
+}
