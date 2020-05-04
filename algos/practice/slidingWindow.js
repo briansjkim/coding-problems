@@ -13,6 +13,7 @@
 
 var maxSubarraySum = function (ints, n) {
   if (ints.length < 1 || n > ints.length) { return null; }
+
   let tempSum = 0;
   let maxSum = Number.MIN_SAFE_INTEGER;
 
@@ -24,7 +25,6 @@ var maxSubarraySum = function (ints, n) {
       tempSum = tempSum - ints[i - (n - 1)];
     }
   }
-
   return maxSum;
 }
 
