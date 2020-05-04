@@ -7,3 +7,11 @@
  * sameFrequency(3589578, 5879385) // true
  * sameFrequency(22, 222) // false
  */
+
+/**
+ * i: two integers
+ * o: boolean
+ * c: linear time complexity
+ * e:
+ */
+
