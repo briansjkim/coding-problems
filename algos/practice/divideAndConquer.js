@@ -33,8 +33,7 @@
  *  if the target number is less than mid
  * if the target number matches an integer, return its index
  * iterate through the left side of the array
- * if the target number equals the mid
- *  return its index
+ * return -1 if there are no matches
  */
 
 // linear time complexity
@@ -46,3 +45,28 @@ var search = function (ints, n) {
   }
   return -1;
 }
+
+// Log(n) time complexity
+var search = function (ints, n) {
+  let min = 0;
+  let max = ints.length - 1;
+
+  while (min <= max) {
+    let mid = Math.floor((min + max) / 2);
+
+    if (n > ints[mid]) {
+      min = mid + 1;
+    } else if (n < ints[mid]) {
+      max = mid - 1;
+    } else {
+      return mid;
+    }
+  }
+
+  return -1;
+}
+
+console.log(search([1, 2, 3, 4, 5, 6], 4)) // 3
+console.log(search([1, 2, 3, 4, 5, 6], 6)) // 5
+console.log(search([1, 2, 3, 4, 5, 6], 11)) // -1
+
