@@ -48,21 +48,32 @@ var search = function (ints, n) {
 
 // Log(n) time complexity
 var search = function (ints, n) {
+  // create min var to store the first index
   let min = 0;
+  // create max var to store the last index
   let max = ints.length - 1;
 
+  // while the first index is less than or equal to the max index
   while (min <= max) {
+    // create mid var to store the middle index
     let mid = Math.floor((min + max) / 2);
 
+    // if n is greater than the int at the mid index
     if (n > ints[mid]) {
+      // set min to mid + 1
+      // this is so that we can go through the right side of the array
       min = mid + 1;
     } else if (n < ints[mid]) {
+      // if n is less than the int at the mid index
+      // set max to mid - 1
+      // this is so that we can go through the left side of the array
       max = mid - 1;
     } else {
+      // return mid if none of the other conditions are true
       return mid;
     }
   }
-
+  // return -1 if n is NOT located inside the array
   return -1;
 }
 
