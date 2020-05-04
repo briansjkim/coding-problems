@@ -24,8 +24,20 @@
  * // return its index
  * // if the targe tnumber was not in the array
  * // return -1
+ *
+ * better approach:
+ * create a variable to store the middle value of the array ('mid')
+ * if the target number is greater than mid
+ *  iterate through the right side of the array
+ * if the target number matches an integer, return its index
+ *  if the target number is less than mid
+ * if the target number matches an integer, return its index
+ * iterate through the left side of the array
+ * if the target number equals the mid
+ *  return its index
  */
 
+// linear time complexity
 var search = function (ints, n) {
   for (let i = 0; i < ints.length; i++) {
     if (ints[i] === n) {
