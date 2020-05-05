@@ -13,20 +13,21 @@
  */
 
 // linear time complexity, linear space complexity
-// var areThereDuplicates = function () {
-//   let storage = {};
+var areThereDuplicates = function () {
+  let storage = {};
 
-//   for (let i = 0; i < arguments.length; i++) {
-//     if (storage[arguments[i]]) {
-//       return true;
-//     } else {
-//       storage[arguments[i]] = true;
-//     }
-//   }
+  for (let i = 0; i < arguments.length; i++) {
+    if (storage[arguments[i]]) {
+      return true;
+    } else {
+      storage[arguments[i]] = true;
+    }
+  }
 
-//   return false;
-// }
+  return false;
+}
 
+// n log n time complexity (sort), constant space complexity
 var areThereDuplicates = function (...args) {
   args.sort((a, b) => a > b);
 
