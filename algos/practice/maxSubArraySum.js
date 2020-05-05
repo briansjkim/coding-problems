@@ -14,3 +14,25 @@
  * c: linear time complexity and constant space complexity
  * e:
  */
+
+var maxSubarraySum = function (ints, target) {
+  if (target > ints.length || ints.length < 1) { return null; }
+  let tempSum = 0;
+  let maxSum = Number.MIN_SAFE_INTEGER;
+
+  for (let i = 0; i < ints.length; i++) {
+    tempSum += ints[i];
+
+    if (i >= target - 1) {
+      maxSum = Math.max(maxSum, tempSum);
+      tempSum = tempSum - ints[i - (target - 1)]
+    }
+  }
+  return maxSum;
+}
+
+console.log(maxSubarraySum([100, 200, 300, 400], 2)) // 700
+console.log(maxSubarraySum([1, 4, 2, 10, 23, 3, 1, 0, 20], 4)) // 39
+console.log(maxSubarraySum([-3, 4, 0, -2, 6, -1], 2)) //5
+console.log(maxSubarraySum([-3, -2, 7, -4, 1, -1, 4, -2, 1], 2)) // 5
+console.log(maxSubarraySum([2, 3], 3)) // null
