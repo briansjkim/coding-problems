@@ -13,6 +13,28 @@
  * e:
  */
 
+// linear time complexity and constant space
 var averagePair = function (ints, target) {
+  let i = 0;
+  let j = 1;
 
+  while (j < ints.length) {
+    let avg = (ints[i] + ints[j]) / 2;
+    if (avg === target) {
+      return true;
+    } else {
+      if (j === ints.length - 1) {
+        i++;
+        j = i + 1;
+      } else {
+        j++;
+      }
+    }
+  }
+  return false;
 }
+
+console.log(averagePair([1, 2, 3], 2.5)) // true
+console.log(averagePair([1, 2, 2, 5, 6, 7, 10, 12, 19], 8)) // true
+console.log(averagePair([-1, 0, 3, 4, 5, 6], 4.1)) // false
+console.log(averagePair([], 4)) // false
