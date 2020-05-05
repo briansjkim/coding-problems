@@ -11,3 +11,7 @@
  * c: linear time complexity, linear space complexity
  * e:
  */
+
+var areThereDuplicates = function () {
+
+}
