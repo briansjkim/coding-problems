@@ -10,8 +10,12 @@
  * minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10], 55) // 5
  * minSubArrayLen([4, 3, 3, 8, 1, 2, 3], 11) // 2
  * minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10], 95) // 0
+ *
+ * i: array of positive integers and target integer
+ * o: integer which is the minimal length of a contiguous subarray
+ * c: linear time complexity and constant space complexity
+ * e:
  */
 
 var minSubArrayLen = function (ints, n) {
-
 }
