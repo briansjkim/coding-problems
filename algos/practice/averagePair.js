@@ -6,4 +6,9 @@
  * averagePair([1, 2, 2, 5, 6, 7, 10, 12, 19], 8) // true
  * averagePair([-1, 0, 3, 4, 5, 6], 4.1) // false
  * averagePair([], 4) // false
+ *
+ * i: array of integers and target average
+ * o: boolean
+ * c: linear time complexity, constant space complexity
+ * e:
  */
