@@ -12,3 +12,7 @@
  * c: linear time complexity, constant space complexity
  * e:
  */
+
+var averagePair = function (ints, target) {
+
+}
