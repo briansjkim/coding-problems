@@ -7,4 +7,9 @@
  * fib(10) // 55
  * fib(28) // 317811
  * fib(35) // 9227465
+ *
+ * i: integer
+ * o: integer which is the sum of the previous two numbers
+ * c:
+ * e:
  */
