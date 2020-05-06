@@ -11,3 +11,7 @@
  * factorial(4) // 24
  * factorial(7) // 5040
  */
+
+var factorial = function () {
+
+}
