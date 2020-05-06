@@ -12,5 +12,13 @@
  */
 
 var reverse = function (string) {
-
+  if (string.length <= 1) {
+    return string[0];
+  } else {
+    return reverse(string.slice(1)) + string[0];
+  }
 }
+
+console.log(reverse('awesome')); // 'emosewa'
+console.log(reverse('rithmschool')); // 'loohcsmhtir'
+console.log(reverse('hello world')); // dlrow olleh
