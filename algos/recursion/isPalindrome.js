@@ -8,4 +8,9 @@
  * isPalindrome(tacocat') // true
  * isPalindrome('amanaplanacanalpanama') // true
  * isPalindrome('amanaplanacanalpandemonium') // false
+ *
+ * i: string
+ * o: boolean
+ * c:
+ * e:
  */
