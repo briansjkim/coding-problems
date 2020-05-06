@@ -8,3 +8,8 @@
  * someRecursive([4, 6, 8], isOdd) // false
  * someRecursive([4, 6, 8], val => val > 10); // false
  */
+
+var someRecursive = function (ints, cb) {
+
+}
+
