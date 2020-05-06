@@ -9,6 +9,9 @@
  * someRecursive([4, 6, 8], val => val > 10); // false
  */
 
+const isOdd = val => val % 2 !== 0;
+
+
 var someRecursive = function (ints, cb) {
 
 }
