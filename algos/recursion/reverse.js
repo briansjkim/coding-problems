@@ -10,3 +10,7 @@
  * c:
  * e:
  */
+
+var reverse = function (string) {
+
+}
