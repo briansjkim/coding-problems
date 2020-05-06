@@ -14,3 +14,7 @@
  * c:
  * e:
  */
+
+var isPalindrome = function (string) {
+
+}
