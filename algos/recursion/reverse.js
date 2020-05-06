@@ -4,4 +4,9 @@
  * Examples:
  * reverse('awesome') // 'emosewa'
  * reverse('rithmschool') // 'loohcsmhtir'
+ *
+ * i: string
+ * o: string -- reversed
+ * c:
+ * e:
  */
