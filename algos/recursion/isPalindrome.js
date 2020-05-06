@@ -16,5 +16,22 @@
  */
 
 var isPalindrome = function (string) {
+  let reverse = '';
 
+  function recurse(str) {
+    if (str.length <= 1) {
+      return str[0];
+    } else {
+      return reverse += recurse(str.slice(1)) + str[0]
+    }
+  }
+  recurse(string);
+
+  return reverse === string;
 }
+
+console.log(isPalindrome('awesome')) // false
+console.log(isPalindrome('foobar')) // false
+console.log(isPalindrome('tacocat')) // true
+console.log(isPalindrome('amanaplanacanalpanama')) // true
+console.log(isPalindrome('amanaplanacanalpandemonium')) // false
