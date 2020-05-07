@@ -6,3 +6,7 @@
  * c: quadratic
  * e:
  */
+
+var insertionSort = function (ints) {
+
+}
