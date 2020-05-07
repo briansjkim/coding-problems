@@ -13,14 +13,13 @@ var swap = function (arr, idx1, idx2) {
   arr[idx2] = temp;
 }
 
-
 var insertionSort = function (ints) {
-  for (let i = ints.length - 1; i >= 0; i--) {
-    for (let j = i - 1; j >= 0; j--) {
-      if (ints[i] < ints[j]) {
-        swap(ints, i, j);
-      }
+  for (let i = 1; i < ints.length; i++) {
+    let currentVal = ints[i];
+    for (var j = i - 1; j >= 0 && ints[j] > currentVal; j--) {
+      ints[j + 1] = ints[j];
     }
+    ints[j + 1] = currentVal;
   }
   return ints;
 }
