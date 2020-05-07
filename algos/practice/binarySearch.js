@@ -6,21 +6,24 @@
 //e:
 
 var binarySearch = function (ints, n) {
-  let mid = Math.floor(ints.length / 2);
+  let start = 0;
+  let end = ints.length - 1;
 
-  if (n === ints[mid]) {
-    console.log(mid)
-    return mid;
-  } else if (n > ints[mid]) {
-    console.log(mid, ints[mid])
-    return binarySearch(ints.slice(mid + 1), n);
-  } else if (n < ints[mid]) {
-    return binarySearch(ints.slice(0, mid - 1), n);
-  } else {
-    return -1;
+  while (start <= end) {
+    let mid = Math.floor((start + end) / 2);
+
+    if (n === ints[mid]) {
+      return mid;
+    } else if (n > ints[mid]) {
+      start = mid + 1;
+    } else if (n < ints[mid]) {
+      end = mid - 1;
+    }
   }
+
+  return -1;
 }
 
-// console.log(binarySearch([1, 2, 3, 4, 5, 6], 4)) // 3
+console.log(binarySearch([1, 2, 3, 4, 5, 6], 4)) // 3
 console.log(binarySearch([1, 2, 3, 4, 5, 6], 6)) // 5
-// console.log(binarySearch([1, 2, 3, 4, 5, 6], 11)) // -1
+console.log(binarySearch([1, 2, 3, 4, 5, 6], 11)) // -1
