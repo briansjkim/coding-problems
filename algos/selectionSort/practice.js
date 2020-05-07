@@ -1,6 +1,8 @@
 /**
  * Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted position
  *
+ * Selecting the minimum value and then swapping
+ *
  * i: array of unsorted integers
  * o: array of sorted integers
  * c:
@@ -11,4 +13,8 @@ var swap = function (arr, idx1, idx2) {
   let temp = arr[idx1];
   arr[idx1] = arr[idx2];
   arr[idx2] = arr[idx1];
+}
+
+var selectionSort = function (ints) {
+
 }
