@@ -34,5 +34,21 @@ var digitCount = function (num) {
   return Math.floor(Math.log10(Math.abs(num))) + 1;
 }
 
-console.log(digitCount(423)); // 3
-console.log(digitCount(10)); // 2
+// console.log(digitCount(423)); // 3
+// console.log(digitCount(10)); // 2
+
+/**
+ * This next helper function tells us the number of digits in the largest numbers in the list
+ */
+
+var mostDigits = function (nums) {
+  let maxDigits = 0;
+  for (let i = 0; i < nums.length; i++) {
+    maxDigits = Math.max(maxDigits, digitCount(nums[i]));
+  }
+  return maxDigits;
+}
+
+console.log(mostDigits([1234, 56, 7])); // 4
+console.log(mostDigits([1, 10, 50, 44, 183])); //3
+console.log(mostDigits([232, 2324, 5467, 2123, 121])); //4
