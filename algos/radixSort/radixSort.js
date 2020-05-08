@@ -54,6 +54,16 @@ var mostDigits = function (nums) {
 // console.log(mostDigits([232, 2324, 5467, 2123, 121])); //4
 
 var radixSort = function (ints) {
+  let maxDigitCount = mostDigits(ints);
 
+  for (let i = 0; i < maxDigitCount; i++) {
+    let digitBuckets = Array.from({ length: 10 }, () => []);
+    for (let j = 0; j < ints.length; j++) {
+      digitBuckets[getDigit(ints[j], i)].push(ints[j]);
+    }
+    ints = [].concat(...digitBuckets);
+  }
+  return ints;
 }
 
+console.log(radixSort([23, 345, 5467, 12, 2345, 9852]));
