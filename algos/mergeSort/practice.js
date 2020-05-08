@@ -9,7 +9,13 @@
  * e:
  */
 
-// time complexity is O(n log n)
+/**
+ *  time complexity is O(n log n)
+ *
+ *  log n => we're constantly breaking the array in half until each array has 0 or 1 element
+ *  n => because we're doing O(n) comparisons PER decomposition
+ *
+ * */
 
 // helper function
 var merge = function (ints1, ints2) {
