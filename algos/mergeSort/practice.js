@@ -54,3 +54,4 @@ var mergeSort = function (ints) {
 
 console.log(mergeSort([4, 3, 2, 7, 10, 99, 50, 100]));
 console.log(mergeSort([1, 5, 10, 4, 7, 11]));
+console.log(mergeSort([]));
