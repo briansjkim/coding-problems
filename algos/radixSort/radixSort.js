@@ -21,3 +21,8 @@ console.log(getDigit(7323, 1)); // 2
 console.log(getDigit(7323, 0)); // 3
 console.log(getDigit(7323, 4)); // 0
 console.log(getDigit(7323, 3)); // 7
+
+/**
+ * The amount of the times we need to run this next helper is to determine which number has the largest or most number of digits
+ * [10, 1, 5, 302, 182, 749, 2083, 7383, 857, 123]; = we would need to run this helper function 4 times because the largest number is 7383/2083 which has 4 digits
+ */
