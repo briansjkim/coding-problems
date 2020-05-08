@@ -9,6 +9,8 @@
  * e:
  */
 
+// time complexity is O(n log n)
+
 // helper function
 var merge = function (ints1, ints2) {
   let result = [];
