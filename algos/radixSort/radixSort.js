@@ -53,6 +53,13 @@ var mostDigits = function (nums) {
 // console.log(mostDigits([1, 10, 50, 44, 183])); //3
 // console.log(mostDigits([232, 2324, 5467, 2123, 121])); //4
 
+/**
+ * generally accepted time complexity O(nk)
+ *
+ * n - length of array
+ * k - number of digits (array)
+ */
+
 var radixSort = function (ints) {
   let maxDigitCount = mostDigits(ints);
 
