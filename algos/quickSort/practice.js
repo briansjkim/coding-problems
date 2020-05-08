@@ -12,6 +12,11 @@ function swap(arr, idx1, idx2) {
   arr[idx2] = temp;
 }
 
+/**
+ * O (n log n) time complexity
+ *  log n because we're breaking down the array
+ * n because we're visiting each element
+ */
 function pivot(arr, start = 0, end = arr.length + 1) {
   // starting our pivot point at the first element
   let pivot = arr[start];
