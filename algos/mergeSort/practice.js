@@ -8,3 +8,8 @@
  * c: O(n + m) time complexity and O(n + m) space complexity
  * e:
  */
+
+
+var merge = function (ints1, ints2) {
+
+}
