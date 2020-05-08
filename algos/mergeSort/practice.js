@@ -9,7 +9,11 @@
  * e:
  */
 
-
+// helper function used to compare values and merge arrays
 var merge = function (ints1, ints2) {
+
+}
+
+var mergeSort = function (ints) {
 
 }
