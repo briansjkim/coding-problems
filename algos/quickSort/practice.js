@@ -12,15 +12,25 @@ function swap(arr, idx1, idx2) {
   arr[idx2] = temp;
 }
 
-
 function pivot(arr, start = 0, end = arr.length + 1) {
+  // starting our pivot point at the first element
   let pivot = arr[start];
+  // the swapIdx will be the first index because that's our pivot point
   let swapIdx = start;
 
+  // iterate through the array starting from start + 1
   for (let i = start + 1; i < arr.length; i++) {
+    // if pivot is greater than a value
     if (pivot > arr[i]) {
+      // increment the swapIdx so that we can have an idea of where to put the pivot element
       swapIdx++;
+      // then swap the element at swapIdx and the element at i
       swap(arr, i, swapIdx);
     }
   }
+  // then swap the element at the swapIdx with the element at the start index
+  swap(arr, start, swapIdx);
+  return swapIdx;
 }
+
+
