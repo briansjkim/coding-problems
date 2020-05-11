@@ -71,6 +71,10 @@ class SinglyLinkedList {
     this.length--;
     return prevHead;
   }
+
+  // adding a new node to the head
+  unshift(val) {
+  }
 }
 
 var singly = new SinglyLinkedList;
