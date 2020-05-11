@@ -86,6 +86,21 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+
+  // retrieving a node by its position in the LL
+  get(position) {
+    if (!this.head) { return undefined; }
+    if (position < 0 || position >= this.length) { return undefined; }
+
+    let counter = 0;
+    let current = this.head;
+
+    while (counter !== position) {
+      current = current.next;
+      counter++;
+    }
+    return current;
+  }
 }
 
 var singly = new SinglyLinkedList;
