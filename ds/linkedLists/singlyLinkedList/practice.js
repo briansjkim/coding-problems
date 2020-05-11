@@ -57,6 +57,10 @@ class SinglyLinkedList {
     }
     return current;
   }
+
+  shift() {
+
+  }
 }
 
 var singly = new SinglyLinkedList;
