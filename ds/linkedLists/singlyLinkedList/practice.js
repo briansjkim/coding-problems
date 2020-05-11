@@ -103,8 +103,17 @@ class SinglyLinkedList {
   }
 
   // changing the value of a node based on its position in the LL
-  set() {
+  // accepts a value and an index
+  // Ex: set(9, 1) => the node's val at the SECOND position will be changed zero index)
+  set(val, position) {
+    let node = this.get(position);
 
+    if (!node) {
+      return false;
+    } else {
+      node.val = val;
+      return true;
+    }
   }
 }
 
