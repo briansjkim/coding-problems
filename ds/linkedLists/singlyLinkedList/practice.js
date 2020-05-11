@@ -24,7 +24,9 @@ class SinglyLinkedList {
       this.head = newNode;
       this.tail = newNode;
     } else {
+      // set the next pointer to the new node
       this.tail.next = newNode;
+      // then set the tail to the new node
       this.tail = newNode;
     }
     this.length++;
