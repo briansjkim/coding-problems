@@ -5,3 +5,8 @@
  *
  * Singly Linked Lists are only connected to the next node, not the previous node
  */
+
+function Node(val) {
+  this.val = val;
+  this.next = null;
+}
