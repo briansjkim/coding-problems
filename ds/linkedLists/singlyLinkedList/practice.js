@@ -58,8 +58,18 @@ class SinglyLinkedList {
     return current;
   }
 
+  // removing a new node from the LL
   shift() {
+    if (!this.head) { return undefined; }
 
+    // get the current head
+    var prevHead = this.head;
+    // assign the next node to be the new head
+    this.head = prevHead.next;
+    // remove the next pointer from the old head
+    prevHead.next = null;
+    this.length--;
+    return prevHead;
   }
 }
 
