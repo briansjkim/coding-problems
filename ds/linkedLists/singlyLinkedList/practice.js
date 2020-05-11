@@ -101,6 +101,11 @@ class SinglyLinkedList {
     }
     return current;
   }
+
+  // changing the value of a node based on its position in the LL
+  set() {
+
+  }
 }
 
 var singly = new SinglyLinkedList;
