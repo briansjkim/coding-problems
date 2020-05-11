@@ -19,7 +19,7 @@ class SinglyLinkedList {
   }
 
   push(val) {
-    let newNode = new Node(val);
+    var newNode = new Node(val);
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
@@ -31,6 +31,31 @@ class SinglyLinkedList {
     }
     this.length++;
     return this;
+  }
+
+  pop() {
+    if (!this.head) { return undefined; }
+
+    // start at the head
+    var current = this.head;
+    // we want to create another pointer to lag one node behind current in order to get the second to last node
+    var newTail;
+
+    while (current.next) {
+      newTail = current;
+      current = current.next;
+    }
+
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+
+    // if the LL only had one node, we want to set both head and tail as null
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
   }
 }
 
