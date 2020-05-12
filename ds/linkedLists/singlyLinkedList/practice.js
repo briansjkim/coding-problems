@@ -116,9 +116,31 @@ class SinglyLinkedList {
     }
   }
 
-  // adding a node to the LL at a specific position
-  insert() {
+  // adding a node to the LL at a specific index (think of LLs as 0 indexed)
+  insert(val, idx) {
+    // if the index is less than zero or greater than length, return false
+    // if index is the same as length, push node to the end of the list
+    // if index is 0, unshift a new node
+    if (idx < 0 || idx > this.length) { return false; }
+    if (idx === this.length) { this.push(val); }
+    if (idx ==== 0) { this.unshift(val); }
 
+    // get the node at the index -1
+    let prevNode = this.get(idx - 1);
+    // create the new node
+    let newNode = new Node(val);
+    // get the node after the previous node
+    let nextNode = prevNode.next;
+
+    // create a temp variable to store the next node after prevNode
+    let temp = prevNode.next;
+    // set the prevNode's next pointer to the new node
+    prevNode.next = newNode;
+    // set the new node's next pointer to the node after the previous node
+    newNode.next = temp;
+
+    this.length++;
+    return true;
   }
 }
 
