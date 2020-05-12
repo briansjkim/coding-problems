@@ -162,7 +162,25 @@ class SinglyLinkedList {
 
   // reversing the LL in place
   reverse() {
+    if (this.length === 0) { return undefined; }
 
+    let prevNode = null;
+    let current = this.head;
+    let following = current;
+
+    this.head = this.tail;
+    this.tail = current;
+
+    while (current !== null) {
+      following = following.next;
+      // since current holds the ORIGINAL head, its next pointer has to be null
+      current.next = prevNode;
+      // set prevNode to current in order to be the current's next pointer
+      prevNode = current;
+      // then set current to equal following in order to continuously change the next pointer
+      current = following;
+    }
+    return this;
   }
 }
 
