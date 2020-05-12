@@ -142,6 +142,11 @@ class SinglyLinkedList {
     this.length++;
     return true;
   }
+
+  // removing a node from the LL at a specific position
+  remove(idx) {
+
+  }
 }
 
 var singly = new SinglyLinkedList;
