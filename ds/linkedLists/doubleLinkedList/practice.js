@@ -15,6 +15,7 @@ class DoublyLinkedList {
     this.length = 0;
   }
 
+  // time complexity: Constant O(1)
   push(val) {
     let newNode = new Node(val);
 
@@ -31,6 +32,7 @@ class DoublyLinkedList {
     return this;
   }
 
+  // time complexity: Constant O(1)
   pop() {
     if (this.length === 0) { return undefined; }
 
@@ -48,6 +50,7 @@ class DoublyLinkedList {
     return removedNode;
   }
 
+  // time complexity: Constant O(1)
   shift() {
     if (!this.head) { return undefined; }
     let removedNode = this.head;
@@ -63,6 +66,7 @@ class DoublyLinkedList {
     return removedNode;
   }
 
+  // time complexity: Constant O(1)
   unshift(val) {
     let newNode = new Node(val);
     if (!this.head) {
@@ -77,6 +81,7 @@ class DoublyLinkedList {
     return this;
   }
 
+  // time complexity: Linear O(N); technically O(N/ 2) because we're only traversing half, but still O(N)
   get(idx) {
     if (idx < 0 || idx >= this.length) { return undefined; }
 
@@ -105,6 +110,7 @@ class DoublyLinkedList {
     return current;
   }
 
+  // time complexity: Linear O(N)
   set(val, idx) {
     let retrievedNode = this.get(idx);
 
@@ -115,6 +121,7 @@ class DoublyLinkedList {
     return false;
   }
 
+  // time complexity: Best = Constant O(1), worst = Linear O(N)
   insert(val, idx) {
     if (idx < 0 || idx >= this.length) { return false; }
     if (idx === 0) { this.unshift(val); }
@@ -143,6 +150,7 @@ class DoublyLinkedList {
     return false;
   }
 
+  // time complexity: best = Constant O(1), worst = Linear O(N)
   remove(idx) {
     if (idx < 0 || idx >= this.length) { return false; }
     if (idx === 0) { this.shift(); }
