@@ -30,4 +30,8 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+
+  pop() {
+
+  }
 }
