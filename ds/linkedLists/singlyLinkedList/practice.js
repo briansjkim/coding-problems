@@ -115,6 +115,11 @@ class SinglyLinkedList {
       return true;
     }
   }
+
+  // adding a node to the LL at a specific position
+  insert() {
+
+  }
 }
 
 var singly = new SinglyLinkedList;
