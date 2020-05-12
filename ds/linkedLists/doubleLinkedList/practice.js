@@ -62,4 +62,8 @@ class DoublyLinkedList {
     this.length--;
     return removedNode;
   }
+
+  unshift(val) {
+
+  }
 }
