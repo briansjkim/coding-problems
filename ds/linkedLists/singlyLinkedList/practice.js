@@ -18,6 +18,7 @@ class SinglyLinkedList {
     this.length = 0;
   }
 
+  // time complexity: constant O(1)
   push(val) {
     var newNode = new Node(val);
     if (!this.head) {
@@ -33,6 +34,8 @@ class SinglyLinkedList {
     return this;
   }
 
+  // time complexity: Linear O(N)
+  // have to go through the whole LL
   pop() {
     if (!this.head) { return undefined; }
 
@@ -59,6 +62,7 @@ class SinglyLinkedList {
   }
 
   // removing a new node from the LL
+  // time complexity: Constant O(1)
   shift() {
     if (!this.head) { return undefined; }
 
@@ -73,6 +77,7 @@ class SinglyLinkedList {
   }
 
   // adding a new node to the head
+  // time complexity: Constant O(1)
   unshift(val) {
     let newHead = new Node(val);
 
@@ -88,6 +93,8 @@ class SinglyLinkedList {
   }
 
   // retrieving a node by its position in the LL
+  // time complexity: worst = Linear O(N), best = Constant O(1)
+  // have to iterate through LL to find the node
   get(position) {
     if (!this.head) { return undefined; }
     if (position < 0 || position >= this.length) { return undefined; }
@@ -105,6 +112,8 @@ class SinglyLinkedList {
   // changing the value of a node based on its position in the LL
   // accepts a value and an index
   // Ex: set(9, 1) => the node's val at the SECOND position will be changed zero index)
+  // time complexity: worst = Linear O(N), best = Constant O(1)
+  // since it uses get(), it's linear
   set(val, position) {
     let node = this.get(position);
 
@@ -117,6 +126,7 @@ class SinglyLinkedList {
   }
 
   // adding a node to the LL at a specific index (think of LLs as 0 indexed)
+  // worst case time complexity: Linear O(N), best = Constant(1)
   insert(val, idx) {
     // if the index is less than zero or greater than length, return false
     // if index is the same as length, push node to the end of the list
@@ -144,6 +154,7 @@ class SinglyLinkedList {
   }
 
   // removing a node from the LL at a specific position
+  // time complexity: worst = Linear O(N), best = Constant O(1)
   remove(idx) {
     if (idx < 0 || idx >= this.length) { return undefined; }
     if (idx === this.length - 1) { this.pop(); }
@@ -161,6 +172,7 @@ class SinglyLinkedList {
   }
 
   // reversing the LL in place
+  // time complexity: Linear O(N)
   reverse() {
     if (this.length === 0) { return undefined; }
 
