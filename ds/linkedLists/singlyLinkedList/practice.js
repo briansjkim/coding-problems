@@ -159,6 +159,11 @@ class SinglyLinkedList {
     this.length--;
     return removedNode;
   }
+
+  // reversing the LL in place
+  reverse() {
+
+  }
 }
 
 var singly = new SinglyLinkedList;
