@@ -76,4 +76,8 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+
+  get(idx) {
+
+  }
 }
