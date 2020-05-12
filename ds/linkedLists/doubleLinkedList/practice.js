@@ -114,4 +114,8 @@ class DoublyLinkedList {
     }
     return false;
   }
+
+  insert(val, idx) {
+
+  }
 }
