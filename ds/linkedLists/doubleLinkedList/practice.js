@@ -142,4 +142,8 @@ class DoublyLinkedList {
 
     return false;
   }
+
+  remove(idx) {
+
+  }
 }
