@@ -145,7 +145,19 @@ class SinglyLinkedList {
 
   // removing a node from the LL at a specific position
   remove(idx) {
+    if (idx < 0 || idx >= this.length) { return undefined; }
+    if (idx === this.length - 1) { this.pop(); }
+    if (idx === 0) { this.shift(); }
 
+    let prevNode = this.get(idx - 1);
+    let removedNode = prevNode.next;
+    let nextNode = removedNode.next;
+
+    removedNode.next = null;
+    prevNode.next = nextNode;
+
+    this.length--;
+    return removedNode;
   }
 }
 
