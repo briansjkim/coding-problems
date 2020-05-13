@@ -9,5 +9,43 @@ function Node(val) {
   this.next = null;
 }
 
+class Stack {
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.size = 0;
+  }
 
+  push(val) {
+    let newNode = new Node(val);
+
+    if (!this.first) {
+      this.first = newNode;
+      this.last = newNode;
+    } else {
+      let oldFirst = this.first;
+      newNode.next = oldFirst;
+      this.first = newNode;
+    }
+
+    this.size++;
+    return this.size;
+  }
+
+  pop() {
+    if (!this.first) { return null; }
+    let poppedNode = this.first;
+
+    // if the first is the same as the tail
+    if (this.first === this.last) {
+      // set the last node to be null
+      this.last = null;
+    }
+    // then set this.first to be the next node
+    // null if this.last is null
+    this.first = this.first.next;
+    this.size--;
+    return poppedNode;
+  }
+}
 
