@@ -18,6 +18,7 @@ class Stack {
     this.size = 0;
   }
   // time complexity: Constant O(1)
+  // fifo, so adds to the beginning
   push(val) {
     let newNode = new Node(val);
 
@@ -35,6 +36,7 @@ class Stack {
   }
 
   // time complexity: Constant O(1)
+  // fifo, so removes from the beginning
   pop() {
     if (!this.first) { return null; }
     let poppedNode = this.first;
