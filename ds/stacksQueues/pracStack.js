@@ -15,7 +15,7 @@ class Stack {
     this.last = null;
     this.size = 0;
   }
-
+  // time complexity: Constant O(1)
   push(val) {
     let newNode = new Node(val);
 
@@ -32,6 +32,7 @@ class Stack {
     return this.size;
   }
 
+  // time complexity: Constant O(1)
   pop() {
     if (!this.first) { return null; }
     let poppedNode = this.first;
