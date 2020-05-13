@@ -50,6 +50,7 @@ class Stack {
     // null if this.last is null
     this.first = this.first.next;
     this.size--;
+    poppedNode.next = null
     return poppedNode;
   }
 }
