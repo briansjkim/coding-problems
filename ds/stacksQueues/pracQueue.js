@@ -46,6 +46,7 @@ class Queue {
 
     this.first.next = null;
     this.size--;
+    removedNode.next = null;
     return removedNode;
   }
 }
