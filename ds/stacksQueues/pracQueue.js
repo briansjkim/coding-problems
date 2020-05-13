@@ -4,6 +4,8 @@
  * Ex) Uploading resources, line at disneyland, printing/task processing
  *
  * Can be created using arrays (which hide the work behind the scenes using shift and unshift) or LLs
+ *
+ * Searching and accessing using queues are also Linear
  */
 
 function Node(val) {
@@ -19,6 +21,7 @@ class Queue {
   }
 
   // lifo, so adds to the end
+  // time complexity: Constant O(1)
   enqueue(val) {
     let newNode = new Node(val);
 
@@ -35,6 +38,7 @@ class Queue {
   }
 
   // lifo, so removes from the beginning
+  // time complexity: Constant O(1)
   dequeue() {
     if (!this.first) { return null; }
 
