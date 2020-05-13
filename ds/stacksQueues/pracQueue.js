@@ -18,6 +18,7 @@ class Queue {
     this.size = 0;
   }
 
+  // lifo, so adds to the end
   enqueue(val) {
     let newNode = new Node(val);
 
@@ -31,5 +32,20 @@ class Queue {
 
     this.size++;
     return this.size;
+  }
+
+  // lifo, so removes from the beginning
+  dequeue() {
+    if (!this.first) { return null; }
+
+    let removedNode = this.first;
+
+    if (this.first === this.last) {
+      this.last = null;
+    }
+
+    this.first.next = null;
+    this.size--;
+    return removedNode;
   }
 }
