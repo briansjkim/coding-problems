@@ -8,4 +8,6 @@
  * parent- the converse notion of a child
  * siblings - a group of nodes with the same parent
  * leaf - a node w/ no children
+ *
+ * Ex) HTML DOM, the way your folders are modeled in a directory
  */
