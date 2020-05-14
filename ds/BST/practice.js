@@ -10,4 +10,10 @@
  * leaf - a node w/ no children
  *
  * Ex) HTML DOM, the way your folders are modeled in a directory
+ *
+ * Regular trees: each node can have any number of child nodes
+ * Binary Trees: each node can ONLY have UP TO two child nodes
+ * Binary Search Trees: each node can ONLY have UP TO two nodes AND they must be sorted. (the left node must be smaller than the parent node and the right node must be larger)
  */
+
+
