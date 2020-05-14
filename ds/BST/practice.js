@@ -16,4 +16,10 @@
  * Binary Search Trees: each node can ONLY have UP TO two nodes AND they must be sorted. (the left node must be smaller than the parent node and the right node must be larger)
  */
 
+function Node(val) {
+  this.val = val;
+  this.left = null;
+  this.right = null;
+}
+
 
