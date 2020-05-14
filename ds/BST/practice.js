@@ -27,6 +27,9 @@ class BinarySearchTree {
     this.root = null;
   }
 
+  // time complexity: O(log n)
+  // Divide and conquer type of method
+  // only iterating through half
   insert(val) {
     let newNode = new Node(val);
     if (!this.root) {
@@ -58,6 +61,9 @@ class BinarySearchTree {
     return this;
   }
 
+  // time complexity: O (log n)
+  // divide and conquer type of method
+  // only iterating through half
   search(val) {
     if (!this.root) {
       return false;
