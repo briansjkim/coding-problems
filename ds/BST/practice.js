@@ -22,4 +22,8 @@ function Node(val) {
   this.right = null;
 }
 
-
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+}
