@@ -57,7 +57,11 @@ class BinarySearchTree {
         return true;
       }
     }
-
     return false;
+  }
+
+  // BFS
+  // Starts at the root nade and traverses from left to right
+  bfs() {
   }
 }
