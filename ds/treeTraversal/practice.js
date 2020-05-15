@@ -61,7 +61,7 @@ class BinarySearchTree {
   }
 
   // BFS
-  // Starts at the root nade and traverses from left to right
+  // Starts at the root node and traverses from left to right
   bfs() {
     if (!this.root) { return undefined; }
 
@@ -77,5 +77,11 @@ class BinarySearchTree {
       if (node.right) { queue.push(node.right); }
     }
     return tree;
+  }
+
+  //DFS Pre-Order
+  // Works down first, left first then right
+  dfsPre() {
+
   }
 }
