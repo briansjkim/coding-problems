@@ -63,5 +63,19 @@ class BinarySearchTree {
   // BFS
   // Starts at the root nade and traverses from left to right
   bfs() {
+    if (!this.root) { return undefined; }
+
+    let queue = [];
+    let tree = [];
+    let node = this.root;
+    queue.push(node);
+
+    while (queue.length > 0) {
+      node = queue.shift();
+      tree.push(node);
+      if (node.left) { queue.push(node.left); }
+      if (node.right) { queue.push(node.right); }
+    }
+    return tree;
   }
 }
