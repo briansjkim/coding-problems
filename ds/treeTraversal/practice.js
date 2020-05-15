@@ -86,6 +86,7 @@ class BinarySearchTree {
   //DFS Pre-Order
   // Works down first, left first then right
 
+  // Can be used to export a tree structure so that it can be easily reconstructed or copied
   dfsPre() {
     if (!this.root) { return undefined; }
 
@@ -118,6 +119,8 @@ class BinarySearchTree {
 
   //DFS InOrder
   // Traverse the entire left, add the node, go back to its parent and add it, then traverse its right
+
+  // Used commonly with BSTs and we get all the nodes in the tree in their underlying order
   dfsIn() {
     let result = [];
 
