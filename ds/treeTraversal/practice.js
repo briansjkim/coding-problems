@@ -82,6 +82,17 @@ class BinarySearchTree {
   //DFS Pre-Order
   // Works down first, left first then right
   dfsPre() {
+    if (!this.root) { return undefined; }
 
+    let result = [];
+
+    function traverse(node) {
+      result.push(node);
+      if (node.left) { traverse(node.left); }
+      if (node.right) { traverse(node.right); }
+    }
+
+    traverse(this.root);
+    return result;
   }
 }
