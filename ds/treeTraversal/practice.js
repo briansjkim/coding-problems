@@ -95,4 +95,10 @@ class BinarySearchTree {
     traverse(this.root);
     return result;
   }
+
+  // DFS Post-Order
+  // Same as Pre-order EXCEPT you start at the leaf node in the left then traverse up, right, and then root
+  dfsPost() {
+
+  }
 }
