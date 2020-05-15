@@ -62,6 +62,8 @@ class BinarySearchTree {
 
   // BFS
   // Starts at the root node and traverses from left to right
+
+  // When to use: When there are lots of nodes to keep track of
   bfs() {
     if (!this.root) { return undefined; }
 
@@ -79,8 +81,11 @@ class BinarySearchTree {
     return tree;
   }
 
+  // When to use DFS: When there are fewer nodes to keep track of
+
   //DFS Pre-Order
   // Works down first, left first then right
+
   dfsPre() {
     if (!this.root) { return undefined; }
 
