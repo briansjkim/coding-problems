@@ -110,4 +110,10 @@ class BinarySearchTree {
     traverse(this.root);
     return result;
   }
+
+  //DFS InOrder
+  // Traverse the entire left, add the node, go back to its parent and add it, then traverse its right
+  dfsIn() {
+
+  }
 }
