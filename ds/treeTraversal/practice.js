@@ -97,8 +97,17 @@ class BinarySearchTree {
   }
 
   // DFS Post-Order
-  // Same as Pre-order EXCEPT you start at the leaf node in the left then traverse up, right, and then root
+  // Same as Pre-order EXCEPT you must VISIT each node before adding it
   dfsPost() {
+    let result = [];
 
+    function traverse(node) {
+      if (node.left) { traverse(node.left); }
+      if (node.right) { traverse(node.right); }
+      result.push(node.left);
+    }
+
+    traverse(this.root);
+    return result;
   }
 }
